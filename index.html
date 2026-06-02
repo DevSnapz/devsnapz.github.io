@@ -1,154 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevSnapz — Code. Connect. Evolve.</title>
+  <meta name="description" content="A developer-first org building AI applications, full-stack systems, and intelligent digital experiences that think, scale, and evolve." />
+  <meta property="og:title" content="DevSnapz" />
+  <meta property="og:description" content="Building the future of ideas, systems, and intelligent digital experiences." />
+  <meta property="og:url" content="https://devsnapz.github.io" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-.ds-root{font-family:'Space Grotesk',sans-serif;color:var(--color-text-primary);padding:0 0 2rem}
-.ds-hero{padding:2.5rem 1.5rem 2rem;border-bottom:0.5px solid var(--color-border-tertiary);position:relative;overflow:hidden}
-.ds-hero-bg{position:absolute;inset:0;opacity:0.04;background:repeating-linear-gradient(0deg,transparent,transparent 28px,var(--color-text-primary) 28px,var(--color-text-primary) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,var(--color-text-primary) 28px,var(--color-text-primary) 29px);pointer-events:none}
-.ds-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.08em;color:#0F6E56;background:#E1F5EE;border:0.5px solid #1D9E75;border-radius:100px;padding:3px 10px;margin-bottom:1rem}
-.ds-badge-dot{width:6px;height:6px;border-radius:50%;background:#1D9E75;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.ds-logo{font-size:2.6rem;font-weight:700;letter-spacing:-0.02em;line-height:1;margin-bottom:0.5rem}
-.ds-logo span{color:#1D9E75}
-.ds-tagline{font-size:0.9rem;color:var(--color-text-secondary);max-width:480px;line-height:1.6;margin-bottom:1.5rem}
-.ds-links{display:flex;gap:8px;flex-wrap:wrap}
-.ds-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:5px 10px;text-decoration:none;transition:all 0.15s}
-.ds-link:hover{color:var(--color-text-primary);border-color:var(--color-border-primary);background:var(--color-background-secondary)}
-.ds-link i{font-size:13px}
-.ds-body{padding:0 1.5rem}
-.ds-section{margin-top:1.75rem}
-.ds-section-label{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.12em;color:var(--color-text-tertiary);text-transform:uppercase;margin-bottom:0.85rem;display:flex;align-items:center;gap:8px}
-.ds-section-label::after{content:'';flex:1;height:0.5px;background:var(--color-border-tertiary)}
-.ds-focus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
-.ds-focus-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.85rem;border:0.5px solid var(--color-border-tertiary);transition:border-color 0.15s}
-.ds-focus-card:hover{border-color:var(--color-border-secondary)}
-.ds-focus-icon{font-size:18px;color:#1D9E75;margin-bottom:0.5rem;display:block}
-.ds-focus-name{font-size:13px;font-weight:500;margin-bottom:2px}
-.ds-focus-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.4}
-.ds-stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
-.ds-stack-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0.85rem}
-.ds-stack-cat{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.08em;color:var(--color-text-tertiary);text-transform:uppercase;margin-bottom:0.5rem}
-.ds-tags{display:flex;flex-wrap:wrap;gap:4px}
-.ds-tag{font-size:11px;font-family:'JetBrains Mono',monospace;color:#085041;background:#E1F5EE;border:0.5px solid #5DCAA5;border-radius:4px;padding:2px 7px}
-.ds-welcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
-.ds-welcome-card{display:flex;align-items:center;gap:8px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);padding:0.7rem 0.85rem}
-.ds-welcome-icon{font-size:17px;color:var(--color-text-secondary)}
-.ds-welcome-label{font-size:12px;font-weight:500}
-.ds-quote{margin-top:1.75rem;padding:1rem 1.25rem;border-left:2px solid #1D9E75;background:var(--color-background-secondary);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0}
-.ds-quote p{font-size:13px;font-style:italic;color:var(--color-text-secondary);line-height:1.7}
-.ds-quote p span{color:var(--color-text-primary);font-style:normal;font-weight:500}
-.ds-ecosystem{margin-top:1.75rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem}
-.ds-eco-left{display:flex;align-items:center;gap:10px}
-.ds-eco-dot{width:8px;height:8px;border-radius:50%;background:#1D9E75}
-.ds-eco-name{font-size:14px;font-weight:600;letter-spacing:-0.01em}
-.ds-eco-sub{font-size:12px;color:var(--color-text-secondary)}
-.ds-eco-btn{font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:500;color:#085041;background:#E1F5EE;border:0.5px solid #1D9E75;border-radius:6px;padding:5px 12px;cursor:pointer;text-decoration:none;transition:all 0.15s}
-.ds-eco-btn:hover{background:#9FE1CB}
-</style>
+    :root {
+      --bg:        #0d0d0d;
+      --bg-sec:    #141414;
+      --bg-ter:    #1a1a1a;
+      --text:      #f0f0f0;
+      --text-sec:  #9a9a9a;
+      --text-ter:  #5a5a5a;
+      --border:    rgba(255,255,255,0.08);
+      --border-md: rgba(255,255,255,0.14);
+      --border-lg: rgba(255,255,255,0.20);
+      --green:     #1D9E75;
+      --green-bg:  #0d2a20;
+      --green-dim: #0F6E56;
+      --green-dk:  #085041;
+      --green-lt:  #9FE1CB;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
 
-<div class="ds-root">
-  <div class="ds-hero">
-    <div class="ds-hero-bg"></div>
-    <div class="ds-badge"><span class="ds-badge-dot"></span>Open to contributors</div>
-    <div class="ds-logo">Dev<span>Synapz</span></div>
-    <p class="ds-tagline">A developer-first org building AI applications, full-stack systems, and intelligent digital experiences that think, scale, and evolve.</p>
-    <div class="ds-links">
-      <a class="ds-link" href="https://aiverse.frozenn.in"><i class="ti ti-world"></i> AiVerse</a>
-      <a class="ds-link" href="https://github.com/DevSynapz"><i class="ti ti-brand-github"></i> GitHub</a>
-      <a class="ds-link" href="https://discord.gg/HKtj4rxZEF"><i class="ti ti-brand-discord"></i> Discord</a>
-      <a class="ds-link" href="mailto:devsynapz@gmail.com"><i class="ti ti-mail"></i> Email</a>
+    html[data-theme="light"] {
+      --bg:        #ffffff;
+      --bg-sec:    #f5f5f5;
+      --bg-ter:    #ebebeb;
+      --text:      #0d0d0d;
+      --text-sec:  #555555;
+      --text-ter:  #aaaaaa;
+      --border:    rgba(0,0,0,0.08);
+      --border-md: rgba(0,0,0,0.14);
+      --border-lg: rgba(0,0,0,0.22);
+      --green:     #1D9E75;
+      --green-bg:  #e6f7f1;
+      --green-dim: #0F6E56;
+      --green-dk:  #085041;
+      --green-lt:  #085041;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding-bottom: 4rem;
+    }
+
+    /* ── Theme toggle ── */
+    .topbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0.75rem 2rem 0;
+    }
+
+    .theme-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: var(--text-ter);
+      background: transparent;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .theme-btn:hover {
+      color: var(--text-sec);
+      border-color: var(--border-md);
+      background: var(--bg-sec);
+    }
+
+    .theme-btn i { font-size: 16px; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 3rem 2rem 2.25rem;
+      border-bottom: 0.5px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 28px, var(--text) 28px, var(--text) 29px),
+        repeating-linear-gradient(90deg, transparent, transparent 28px, var(--text) 28px, var(--text) 29px);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--green-lt);
+      background: var(--green-bg);
+      border: 0.5px solid var(--green);
+      border-radius: 100px;
+      padding: 3px 10px;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.35; }
+    }
+
+    .logo {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+
+    .logo span { color: var(--green); }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      max-width: 500px;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+
+    .links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      color: var(--text-sec);
+      border: 0.5px solid var(--border-md);
+      border-radius: 6px;
+      padding: 6px 12px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .link:hover {
+      color: var(--text);
+      border-color: var(--border-lg);
+      background: var(--bg-sec);
+    }
+
+    .link i { font-size: 14px; }
+
+    /* ── Body ── */
+    .body { padding: 0 2rem; }
+
+    .section { margin-top: 2rem; }
+
+    .section-label {
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      color: var(--text-ter);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: var(--border);
+    }
+
+    /* ── Capability Cards ── */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 8px;
+    }
+
+    .focus-card {
+      background: var(--bg-sec);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      border: 0.5px solid var(--border);
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .focus-card:hover {
+      border-color: var(--border-md);
+      background: var(--bg-ter);
+    }
+
+    .focus-icon {
+      font-size: 20px;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .focus-name { font-size: 13px; font-weight: 500; margin-bottom: 3px; }
+    .focus-desc { font-size: 11px; color: var(--text-sec); line-height: 1.5; }
+
+    /* ── Stack Cards ── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+    }
+
+    .stack-card {
+      background: var(--bg-sec);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.9rem;
+    }
+
+    .stack-cat {
+      font-size: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-ter);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+
+    .tag {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--green-lt);
+      background: var(--green-bg);
+      border: 0.5px solid var(--green-dim);
+      border-radius: 4px;
+      padding: 2px 7px;
+    }
+
+    /* ── Ecosystem ── */
+    .ecosystem {
+      background: var(--bg-sec);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .eco-left { display: flex; align-items: center; gap: 10px; }
+
+    .eco-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px var(--green);
+    }
+
+    .eco-name { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
+    .eco-sub  { font-size: 12px; color: var(--text-sec); margin-top: 1px; }
+
+    .eco-btn {
+      font-size: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      color: var(--green-lt);
+      background: var(--green-bg);
+      border: 0.5px solid var(--green);
+      border-radius: 6px;
+      padding: 6px 14px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .eco-btn:hover { background: rgba(29,158,117,0.2); }
+
+    /* ── Join cards ── */
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+    }
+
+    .welcome-card {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--bg-sec);
+      border-radius: var(--radius-md);
+      border: 0.5px solid var(--border);
+      padding: 0.75rem 0.9rem;
+      transition: border-color 0.15s;
+    }
+
+    .welcome-card:hover { border-color: var(--border-md); }
+    .welcome-icon { font-size: 17px; color: var(--text-sec); }
+    .welcome-label { font-size: 12px; font-weight: 500; }
+
+    /* ── Quote ── */
+    .quote {
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      border-left: 2px solid var(--green);
+      background: var(--bg-sec);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+    .quote p {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--text-sec);
+      line-height: 1.8;
+    }
+
+    .quote p span { color: var(--text); font-style: normal; font-weight: 500; }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 3rem;
+      padding: 1.5rem 2rem 0;
+      border-top: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .footer-brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .footer-brand span { color: var(--green); }
+
+    .footer-copy {
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-ter);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 520px) {
+      .topbar{ padding: 0.75rem 1.25rem 0; }
+      .hero  { padding: 2rem 1.25rem 1.75rem; }
+      .body  { padding: 0 1.25rem; }
+      .logo  { font-size: 2.4rem; }
+      .footer{ padding: 1.25rem 1.25rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Theme toggle -->
+    <div class="topbar">
+      <button class="theme-btn" id="theme-toggle" aria-label="Toggle light/dark mode">
+        <i class="ti ti-moon" id="theme-icon" aria-hidden="true"></i>
+      </button>
     </div>
+
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="badge"><span class="badge-dot"></span>Open to contributors</div>
+      <div class="logo">Dev<span>Snapz</span></div>
+      <p class="tagline">A developer-first org building AI applications, full-stack systems, and intelligent digital experiences that think, scale, and evolve.</p>
+      <nav class="links" aria-label="Quick links">
+        <a class="link" href="https://aiverse.frozenn.in" target="_blank" rel="noopener">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 1024 1008" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <path fill="currentColor" d="M719.434082,493.364746 C697.631165,543.862793 675.920471,593.987122 654.383911,644.186218 C652.747925,647.999512 650.746643,649.473389 646.589294,649.424377 C629.594299,649.224121 612.592896,649.182007 595.599792,649.451538 C590.707764,649.529114 588.228577,647.933655 586.264343,643.358398 C557.292786,575.875854 528.130981,508.475006 499.003784,441.059326 C492.729309,426.536865 486.372375,412.049927 480.138245,397.510284 C477.803406,392.064789 478.504883,391.009338 484.352570,390.991119 C501.349792,390.938202 518.347900,391.042847 535.344238,390.909637 C539.387878,390.877960 541.718994,392.317810 543.322693,396.135925 C561.960388,440.508820 580.734558,484.824402 599.457642,529.161438 C606.001526,544.657532 612.494324,560.175171 619.044250,575.668640 C619.603821,576.992310 619.967651,578.569824 621.795837,579.068237 C624.250671,577.791565 624.645569,575.119568 625.601074,572.922668 C646.525391,524.814819 667.387878,476.680084 688.273254,428.555267 C692.914368,417.861176 697.734558,407.242065 702.190125,396.471649 C703.840271,392.482819 706.313782,390.913666 710.545593,390.949524 C726.208679,391.082214 741.873535,391.002777 757.537720,391.015411 C759.027283,391.016632 760.556885,390.928925 762.718262,392.739136 C748.426453,425.951355 733.998230,459.480560 719.434082,493.364746z"/>
+            <path fill="currentColor" d="M516.111572,585.986816 C524.858154,606.202637 533.441589,626.074219 542.038452,645.940063 C544.327209,651.229065 543.848999,652.148132 538.214722,652.168518 C520.718079,652.231750 503.220856,652.146729 485.724670,652.251587 C482.219086,652.272583 480.250458,650.879150 478.912231,647.669189 C465.199036,614.775208 451.437592,581.901184 437.600494,549.059143 C426.285370,522.202942 414.853088,495.396179 403.457367,468.574036 C402.817078,467.066925 402.207672,465.475891 400.498016,464.837219 C398.368286,465.546875 397.859711,467.425079 397.150604,469.057678 C377.978088,513.200562 358.832611,557.355164 339.677765,601.505737 C332.983398,616.935852 326.206299,632.330750 319.634155,647.812622 C318.327484,650.890686 316.394043,652.210754 313.192963,652.204773 C296.862732,652.174133 280.532440,652.175232 264.202148,652.181580 C260.193817,652.183105 259.285797,650.648560 260.921783,646.875793 C284.243896,593.094116 307.489197,539.279114 330.737152,485.465240 C343.021454,457.029785 355.365295,428.619293 367.449554,400.098938 C369.364014,395.580536 371.899323,393.714935 376.803436,393.777496 C393.464417,393.990112 410.130920,393.982025 426.792450,393.798065 C431.247101,393.748901 433.707977,395.264709 435.502319,399.447601 C454.935333,444.747772 474.534393,489.976746 494.098877,535.220520 C501.369202,552.033508 508.667816,568.834167 516.111572,585.986816z"/>
+          </svg>
+          AiVerse
+        </a>
+        <a class="link" href="https://github.com/DevSnapz" target="_blank" rel="noopener"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+        <a class="link" href="https://discord.gg/HKtj4rxZEF" target="_blank" rel="noopener"><i class="ti ti-brand-discord" aria-hidden="true"></i> Discord</a>
+        <a class="link" href="mailto:devsnapz@gmail.com"><i class="ti ti-mail" aria-hidden="true"></i> Email</a>
+      </nav>
+    </header>
+
+    <main class="body">
+
+      <!-- Capabilities -->
+      <section class="section" aria-labelledby="cap-label">
+        <div class="section-label" id="cap-label">Core capabilities</div>
+        <div class="focus-grid">
+          <div class="focus-card">
+            <i class="ti ti-brain focus-icon" aria-hidden="true"></i>
+            <div class="focus-name">AI Applications</div>
+            <div class="focus-desc">LLM-powered tools and intelligent systems</div>
+          </div>
+          <div class="focus-card">
+            <i class="ti ti-layout focus-icon" aria-hidden="true"></i>
+            <div class="focus-name">Full-Stack Web</div>
+            <div class="focus-desc">End-to-end web apps that scale</div>
+          </div>
+          <div class="focus-card">
+            <i class="ti ti-topology-star focus-icon" aria-hidden="true"></i>
+            <div class="focus-name">System Design</div>
+            <div class="focus-desc">Architecting robust, distributed systems</div>
+          </div>
+          <div class="focus-card">
+            <i class="ti ti-terminal focus-icon" aria-hidden="true"></i>
+            <div class="focus-name">DevTools & Automation</div>
+            <div class="focus-desc">CLI tools, scripts, and workflow automation</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section class="section" aria-labelledby="stack-label">
+        <div class="section-label" id="stack-label">Architecture stack</div>
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="stack-cat">Frontend</div>
+            <div class="tags">
+              <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">HTML</span><span class="tag">Tailwind</span>
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-cat">Backend</div>
+            <div class="tags">
+              <span class="tag">Node.js</span><span class="tag">Express</span>
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-cat">Languages</div>
+            <div class="tags">
+              <span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">C++</span>
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-cat">Database</div>
+            <div class="tags">
+              <span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Firebase</span>
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="stack-cat">DevOps</div>
+            <div class="tags">
+              <span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Vercel</span><span class="tag">AWS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ecosystem -->
+      <section class="section" aria-labelledby="eco-label">
+        <div class="section-label" id="eco-label">Featured ecosystem</div>
+        <div class="ecosystem">
+          <div class="eco-left">
+            <div class="eco-dot"></div>
+            <div>
+              <div class="eco-name">AiVerse</div>
+              <div class="eco-sub">Flagship AI platform · Live</div>
+            </div>
+          </div>
+          <a class="eco-btn" href="https://aiverse.frozenn.in" target="_blank" rel="noopener">Visit AiVerse ↗</a>
+        </div>
+      </section>
+
+      <!-- Join -->
+      <section class="section" aria-labelledby="join-label">
+        <div class="section-label" id="join-label">Join the network</div>
+        <div class="welcome-grid">
+          <div class="welcome-card"><i class="ti ti-code welcome-icon" aria-hidden="true"></i><span class="welcome-label">Developers</span></div>
+          <div class="welcome-card"><i class="ti ti-palette welcome-icon" aria-hidden="true"></i><span class="welcome-label">Designers</span></div>
+          <div class="welcome-card"><i class="ti ti-robot welcome-icon" aria-hidden="true"></i><span class="welcome-label">AI Engineers</span></div>
+          <div class="welcome-card"><i class="ti ti-git-branch welcome-icon" aria-hidden="true"></i><span class="welcome-label">Open-Source Contributors</span></div>
+        </div>
+      </section>
+
+      <!-- Quote -->
+      <div class="quote">
+        <p><span>"Every idea is a node.</span> DevSnapz connects them." — Code. Connect. Evolve. ⚡</p>
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-brand">Dev<span>Snapz</span></div>
+      <div class="footer-copy">⚡ code · connect · evolve</div>
+    </footer>
+
   </div>
+  <script>
+    const html    = document.documentElement;
+    const btn     = document.getElementById('theme-toggle');
+    const icon    = document.getElementById('theme-icon');
+    const stored  = localStorage.getItem('ds-theme');
 
-  <div class="ds-body">
-    <div class="ds-section">
-      <div class="ds-section-label">Core capabilities</div>
-      <div class="ds-focus-grid">
-        <div class="ds-focus-card">
-          <i class="ti ti-brain ds-focus-icon" aria-hidden="true"></i>
-          <div class="ds-focus-name">AI Applications</div>
-          <div class="ds-focus-desc">LLM-powered tools and intelligent systems</div>
-        </div>
-        <div class="ds-focus-card">
-          <i class="ti ti-layout ds-focus-icon" aria-hidden="true"></i>
-          <div class="ds-focus-name">Full-Stack Web</div>
-          <div class="ds-focus-desc">End-to-end web apps that scale</div>
-        </div>
-        <div class="ds-focus-card">
-          <i class="ti ti-topology-star ds-focus-icon" aria-hidden="true"></i>
-          <div class="ds-focus-name">System Design</div>
-          <div class="ds-focus-desc">Architecting robust, distributed systems</div>
-        </div>
-        <div class="ds-focus-card">
-          <i class="ti ti-terminal ds-focus-icon" aria-hidden="true"></i>
-          <div class="ds-focus-name">DevTools & Automation</div>
-          <div class="ds-focus-desc">CLI tools, scripts, and workflow automation</div>
-        </div>
-      </div>
-    </div>
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      icon.className = theme === 'light' ? 'ti ti-sun' : 'ti ti-moon';
+      localStorage.setItem('ds-theme', theme);
+    }
 
-    <div class="ds-section">
-      <div class="ds-section-label">Architecture stack</div>
-      <div class="ds-stack-grid">
-        <div class="ds-stack-card">
-          <div class="ds-stack-cat">Frontend</div>
-          <div class="ds-tags">
-            <span class="ds-tag">React</span><span class="ds-tag">Next.js</span><span class="ds-tag">HTML</span><span class="ds-tag">Tailwind</span>
-          </div>
-        </div>
-        <div class="ds-stack-card">
-          <div class="ds-stack-cat">Backend</div>
-          <div class="ds-tags">
-            <span class="ds-tag">Node.js</span><span class="ds-tag">Express</span>
-          </div>
-        </div>
-        <div class="ds-stack-card">
-          <div class="ds-stack-cat">Languages</div>
-          <div class="ds-tags">
-            <span class="ds-tag">TypeScript</span><span class="ds-tag">JavaScript</span><span class="ds-tag">Python</span><span class="ds-tag">C++</span>
-          </div>
-        </div>
-        <div class="ds-stack-card">
-          <div class="ds-stack-cat">Database</div>
-          <div class="ds-tags">
-            <span class="ds-tag">MongoDB</span><span class="ds-tag">PostgreSQL</span><span class="ds-tag">Firebase</span>
-          </div>
-        </div>
-        <div class="ds-stack-card">
-          <div class="ds-stack-cat">DevOps</div>
-          <div class="ds-tags">
-            <span class="ds-tag">Docker</span><span class="ds-tag">GitHub Actions</span><span class="ds-tag">Vercel</span><span class="ds-tag">AWS</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    applyTheme(stored === 'light' ? 'light' : 'dark');
 
-    <div class="ds-section">
-      <div class="ds-section-label">Featured ecosystem</div>
-      <div class="ds-ecosystem">
-        <div class="ds-eco-left">
-          <div class="ds-eco-dot"></div>
-          <div>
-            <div class="ds-eco-name">AiVerse</div>
-            <div class="ds-eco-sub">Flagship AI platform · Live</div>
-          </div>
-        </div>
-        <a class="ds-eco-btn" href="https://aiverse.frozenn.in">Visit AiVerse ↗</a>
-      </div>
-    </div>
-
-    <div class="ds-section">
-      <div class="ds-section-label">Join the network</div>
-      <div class="ds-welcome-grid">
-        <div class="ds-welcome-card"><i class="ti ti-code ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">Developers</span></div>
-        <div class="ds-welcome-card"><i class="ti ti-palette ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">Designers</span></div>
-        <div class="ds-welcome-card"><i class="ti ti-robot ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">AI Engineers</span></div>
-        <div class="ds-welcome-card"><i class="ti ti-git-branch ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">Open-Source Contributors</span></div>
-      </div>
-    </div>
-
-    <div class="ds-quote">
-      <p><span>"Every idea is a node.</span> DevSynapz connects them." — Code. Connect. Evolve. ⚡</p>
-    </div>
-  </div>
-</div>
+    btn.addEventListener('click', () => {
+      applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
