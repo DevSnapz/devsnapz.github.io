@@ -1,0 +1,36 @@
+import React from 'react'
+
+const rows = [
+  { cat: 'Frontend', tags: ['React','Next.js','Tailwind','HTML/CSS'] },
+  { cat: 'Backend', tags: ['Node.js','Express','REST APIs'] },
+  { cat: 'Languages', tags: ['TypeScript','Python','JavaScript','C++'] },
+  { cat: 'Database', tags: ['MongoDB','PostgreSQL','Firebase'] },
+  { cat: 'DevOps', tags: ['Docker','GitHub Actions','Vercel','AWS'] }
+]
+
+export default function Stack() {
+  return (
+    <section id="stack" className="max-w-[1100px] mx-auto px-4 sm:px-8 py-12">
+      <div className="font-dmmono text-xs uppercase tracking-wider text-ink2 mb-6 anim">Architecture stack</div>
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="anim">
+          <h2 className="font-outfit font-extrabold text-[clamp(1.8rem,3vw,2.6rem)] mb-4">The tools<br/>we trust.</h2>
+          <p className="text-ink1">Carefully chosen. Continuously refined. Every entry in our stack earns its place through real production use.</p>
+        </div>
+
+        <div className="md:col-span-2 flex flex-col gap-3">
+          {rows.map(r => (
+            <div key={r.cat} className="bg-bg1 border border-[rgba(46,46,44,1)] rounded-md p-4 flex items-center gap-4">
+              <div className="font-dmmono text-xs uppercase text-ink2 min-w-[80px]">{r.cat}</div>
+              <div className="flex flex-wrap gap-2">
+                {r.tags.map(t => (
+                  <div key={t} className={`text-xs font-dmmono ${['React','Node.js','TypeScript','MongoDB','Docker','Tailwind'].includes(t) ? 'bg-[rgba(27,206,146,0.07)] text-g-text border border-[rgba(27,206,146,0.2)] rounded-sm px-2 py-1' : 'bg-bg2 text-ink1 border border-[rgba(46,46,44,1)] rounded-sm px-2 py-1'}`}>{t}</div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
