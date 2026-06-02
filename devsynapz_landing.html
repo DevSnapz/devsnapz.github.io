@@ -1,0 +1,154 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.ds-root{font-family:'Space Grotesk',sans-serif;color:var(--color-text-primary);padding:0 0 2rem}
+.ds-hero{padding:2.5rem 1.5rem 2rem;border-bottom:0.5px solid var(--color-border-tertiary);position:relative;overflow:hidden}
+.ds-hero-bg{position:absolute;inset:0;opacity:0.04;background:repeating-linear-gradient(0deg,transparent,transparent 28px,var(--color-text-primary) 28px,var(--color-text-primary) 29px),repeating-linear-gradient(90deg,transparent,transparent 28px,var(--color-text-primary) 28px,var(--color-text-primary) 29px);pointer-events:none}
+.ds-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.08em;color:#0F6E56;background:#E1F5EE;border:0.5px solid #1D9E75;border-radius:100px;padding:3px 10px;margin-bottom:1rem}
+.ds-badge-dot{width:6px;height:6px;border-radius:50%;background:#1D9E75;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.ds-logo{font-size:2.6rem;font-weight:700;letter-spacing:-0.02em;line-height:1;margin-bottom:0.5rem}
+.ds-logo span{color:#1D9E75}
+.ds-tagline{font-size:0.9rem;color:var(--color-text-secondary);max-width:480px;line-height:1.6;margin-bottom:1.5rem}
+.ds-links{display:flex;gap:8px;flex-wrap:wrap}
+.ds-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:500;color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:5px 10px;text-decoration:none;transition:all 0.15s}
+.ds-link:hover{color:var(--color-text-primary);border-color:var(--color-border-primary);background:var(--color-background-secondary)}
+.ds-link i{font-size:13px}
+.ds-body{padding:0 1.5rem}
+.ds-section{margin-top:1.75rem}
+.ds-section-label{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.12em;color:var(--color-text-tertiary);text-transform:uppercase;margin-bottom:0.85rem;display:flex;align-items:center;gap:8px}
+.ds-section-label::after{content:'';flex:1;height:0.5px;background:var(--color-border-tertiary)}
+.ds-focus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.ds-focus-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:0.85rem;border:0.5px solid var(--color-border-tertiary);transition:border-color 0.15s}
+.ds-focus-card:hover{border-color:var(--color-border-secondary)}
+.ds-focus-icon{font-size:18px;color:#1D9E75;margin-bottom:0.5rem;display:block}
+.ds-focus-name{font-size:13px;font-weight:500;margin-bottom:2px}
+.ds-focus-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.4}
+.ds-stack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.ds-stack-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0.85rem}
+.ds-stack-cat{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.08em;color:var(--color-text-tertiary);text-transform:uppercase;margin-bottom:0.5rem}
+.ds-tags{display:flex;flex-wrap:wrap;gap:4px}
+.ds-tag{font-size:11px;font-family:'JetBrains Mono',monospace;color:#085041;background:#E1F5EE;border:0.5px solid #5DCAA5;border-radius:4px;padding:2px 7px}
+.ds-welcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.ds-welcome-card{display:flex;align-items:center;gap:8px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);padding:0.7rem 0.85rem}
+.ds-welcome-icon{font-size:17px;color:var(--color-text-secondary)}
+.ds-welcome-label{font-size:12px;font-weight:500}
+.ds-quote{margin-top:1.75rem;padding:1rem 1.25rem;border-left:2px solid #1D9E75;background:var(--color-background-secondary);border-radius:0 var(--border-radius-md) var(--border-radius-md) 0}
+.ds-quote p{font-size:13px;font-style:italic;color:var(--color-text-secondary);line-height:1.7}
+.ds-quote p span{color:var(--color-text-primary);font-style:normal;font-weight:500}
+.ds-ecosystem{margin-top:1.75rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem}
+.ds-eco-left{display:flex;align-items:center;gap:10px}
+.ds-eco-dot{width:8px;height:8px;border-radius:50%;background:#1D9E75}
+.ds-eco-name{font-size:14px;font-weight:600;letter-spacing:-0.01em}
+.ds-eco-sub{font-size:12px;color:var(--color-text-secondary)}
+.ds-eco-btn{font-size:12px;font-family:'JetBrains Mono',monospace;font-weight:500;color:#085041;background:#E1F5EE;border:0.5px solid #1D9E75;border-radius:6px;padding:5px 12px;cursor:pointer;text-decoration:none;transition:all 0.15s}
+.ds-eco-btn:hover{background:#9FE1CB}
+</style>
+
+<div class="ds-root">
+  <div class="ds-hero">
+    <div class="ds-hero-bg"></div>
+    <div class="ds-badge"><span class="ds-badge-dot"></span>Open to contributors</div>
+    <div class="ds-logo">Dev<span>Synapz</span></div>
+    <p class="ds-tagline">A developer-first org building AI applications, full-stack systems, and intelligent digital experiences that think, scale, and evolve.</p>
+    <div class="ds-links">
+      <a class="ds-link" href="https://aiverse.frozenn.in"><i class="ti ti-world"></i> AiVerse</a>
+      <a class="ds-link" href="https://github.com/DevSynapz"><i class="ti ti-brand-github"></i> GitHub</a>
+      <a class="ds-link" href="https://discord.gg/HKtj4rxZEF"><i class="ti ti-brand-discord"></i> Discord</a>
+      <a class="ds-link" href="mailto:devsynapz@gmail.com"><i class="ti ti-mail"></i> Email</a>
+    </div>
+  </div>
+
+  <div class="ds-body">
+    <div class="ds-section">
+      <div class="ds-section-label">Core capabilities</div>
+      <div class="ds-focus-grid">
+        <div class="ds-focus-card">
+          <i class="ti ti-brain ds-focus-icon" aria-hidden="true"></i>
+          <div class="ds-focus-name">AI Applications</div>
+          <div class="ds-focus-desc">LLM-powered tools and intelligent systems</div>
+        </div>
+        <div class="ds-focus-card">
+          <i class="ti ti-layout ds-focus-icon" aria-hidden="true"></i>
+          <div class="ds-focus-name">Full-Stack Web</div>
+          <div class="ds-focus-desc">End-to-end web apps that scale</div>
+        </div>
+        <div class="ds-focus-card">
+          <i class="ti ti-topology-star ds-focus-icon" aria-hidden="true"></i>
+          <div class="ds-focus-name">System Design</div>
+          <div class="ds-focus-desc">Architecting robust, distributed systems</div>
+        </div>
+        <div class="ds-focus-card">
+          <i class="ti ti-terminal ds-focus-icon" aria-hidden="true"></i>
+          <div class="ds-focus-name">DevTools & Automation</div>
+          <div class="ds-focus-desc">CLI tools, scripts, and workflow automation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <div class="ds-section-label">Architecture stack</div>
+      <div class="ds-stack-grid">
+        <div class="ds-stack-card">
+          <div class="ds-stack-cat">Frontend</div>
+          <div class="ds-tags">
+            <span class="ds-tag">React</span><span class="ds-tag">Next.js</span><span class="ds-tag">HTML</span><span class="ds-tag">Tailwind</span>
+          </div>
+        </div>
+        <div class="ds-stack-card">
+          <div class="ds-stack-cat">Backend</div>
+          <div class="ds-tags">
+            <span class="ds-tag">Node.js</span><span class="ds-tag">Express</span>
+          </div>
+        </div>
+        <div class="ds-stack-card">
+          <div class="ds-stack-cat">Languages</div>
+          <div class="ds-tags">
+            <span class="ds-tag">TypeScript</span><span class="ds-tag">JavaScript</span><span class="ds-tag">Python</span><span class="ds-tag">C++</span>
+          </div>
+        </div>
+        <div class="ds-stack-card">
+          <div class="ds-stack-cat">Database</div>
+          <div class="ds-tags">
+            <span class="ds-tag">MongoDB</span><span class="ds-tag">PostgreSQL</span><span class="ds-tag">Firebase</span>
+          </div>
+        </div>
+        <div class="ds-stack-card">
+          <div class="ds-stack-cat">DevOps</div>
+          <div class="ds-tags">
+            <span class="ds-tag">Docker</span><span class="ds-tag">GitHub Actions</span><span class="ds-tag">Vercel</span><span class="ds-tag">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <div class="ds-section-label">Featured ecosystem</div>
+      <div class="ds-ecosystem">
+        <div class="ds-eco-left">
+          <div class="ds-eco-dot"></div>
+          <div>
+            <div class="ds-eco-name">AiVerse</div>
+            <div class="ds-eco-sub">Flagship AI platform · Live</div>
+          </div>
+        </div>
+        <a class="ds-eco-btn" href="https://aiverse.frozenn.in">Visit AiVerse ↗</a>
+      </div>
+    </div>
+
+    <div class="ds-section">
+      <div class="ds-section-label">Join the network</div>
+      <div class="ds-welcome-grid">
+        <div class="ds-welcome-card"><i class="ti ti-code ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">Developers</span></div>
+        <div class="ds-welcome-card"><i class="ti ti-palette ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">Designers</span></div>
+        <div class="ds-welcome-card"><i class="ti ti-robot ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">AI Engineers</span></div>
+        <div class="ds-welcome-card"><i class="ti ti-git-branch ds-welcome-icon" aria-hidden="true"></i><span class="ds-welcome-label">Open-Source Contributors</span></div>
+      </div>
+    </div>
+
+    <div class="ds-quote">
+      <p><span>"Every idea is a node.</span> DevSynapz connects them." — Code. Connect. Evolve. ⚡</p>
+    </div>
+  </div>
+</div>
