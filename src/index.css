@@ -131,4 +131,22 @@ body::before{
 
 @keyframes cursor{0%,100%{opacity:1;}50%{opacity:0;}}
 
+/* Light theme overrides */
+.light {
+  --bg0: #fbfbfc;
+  --bg1: #ffffff;
+  --bg2: #f6f7f8;
+  --bg3: #eef0f2;
+  --bg4: #e6e9ec;
+  --ink0: #0b0b0b;
+  --ink1: #3b3b3b;
+  --ink2: #6b6b6b;
+  --ink3: #8f8f8f;
+  --g: #0f9d6a;
+  --g-dim: #0b7a52;
+  --g-glow: rgba(15,157,106,0.08);
+  --g-text: #086d4d;
+  --gold: #8b6f2f;
+}
+
 

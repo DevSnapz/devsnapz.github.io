@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
@@ -16,6 +17,7 @@ export default function Nav() {
           <a className="text-[0.72rem] sm:text-xs font-dmmono text-ink1 hover:text-ink0" href="#ecosystem">Ecosystem</a>
           <a className="text-[0.72rem] sm:text-xs font-dmmono text-ink1 hover:text-ink0" href="#community">Community</a>
           <a className="text-[0.72rem] sm:text-xs font-dmmono text-g-text bg-[rgba(27,206,146,0.07)] border border-[rgba(14,122,87,1)] rounded-md px-2.5 py-1.5" href="#community">Join</a>
+          <ThemeToggle />
         </div>
 
         <button

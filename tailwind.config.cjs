@@ -3,19 +3,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg0: '#080808',
-        bg1: '#0f0f0f',
-        bg2: '#161616',
-        bg3: '#1e1e1e',
-        bg4: '#252525',
-        ink0: '#f4f4f0',
-        ink1: '#a8a8a0',
-        ink2: '#5c5c58',
-        ink3: '#2e2e2c',
-        g: '#1bce92',
-        'g-dim': '#0e7a57',
-        'g-text': '#7eecc4',
-        gold: '#c9a84c'
+        bg0: 'var(--bg0)',
+        bg1: 'var(--bg1)',
+        bg2: 'var(--bg2)',
+        bg3: 'var(--bg3)',
+        bg4: 'var(--bg4)',
+        ink0: 'var(--ink0)',
+        ink1: 'var(--ink1)',
+        ink2: 'var(--ink2)',
+        ink3: 'var(--ink3)',
+        g: 'var(--g)',
+        'g-dim': 'var(--g-dim)',
+        'g-text': 'var(--g-text)',
+        gold: 'var(--gold)'
       },
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],

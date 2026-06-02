@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useAnimateOnScroll from './hooks/useAnimateOnScroll'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
@@ -10,6 +10,18 @@ import Footer from './components/Footer'
 
 export default function App() {
   useAnimateOnScroll()
+
+  useEffect(() => {
+    // initialize theme from localStorage or prefers-color-scheme
+    try {
+      const saved = localStorage.getItem('theme')
+      if (saved === 'light') document.documentElement.classList.add('light')
+      else if (saved === 'dark') document.documentElement.classList.remove('light')
+      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.classList.add('light')
+      }
+    } catch (e) { /* ignore */ }
+  }, [])
 
   return (
     <div className="min-h-screen font-dmsans text-ink0 bg-bg0">
