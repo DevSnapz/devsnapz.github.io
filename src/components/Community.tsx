@@ -55,10 +55,10 @@ export default function Community(){
         <p className="text-ink1 text-sm anim text-left sm:text-right">All backgrounds welcome. If you ship things and love craft, this is your corner.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 bg-[rgba(46,46,44,1)] rounded-xl overflow-hidden mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 bg-bg3 rounded-xl overflow-hidden mt-8">
         {people.map(p => (
           <div key={p} className="bg-bg1 p-4 flex items-center gap-4">
-            <div className="w-10 h-10 rounded-md bg-bg3 border border-[rgba(46,46,44,1)] flex items-center justify-center">
+            <div className="w-10 h-10 rounded-md bg-bg3 border border-ink3 flex items-center justify-center">
               <svg className="w-4 h-4 stroke-ink1" viewBox="0 0 24 24" fill="none">{iconForPerson(p)}</svg>
             </div>
             <div className="font-medium">{p}</div>
@@ -66,7 +66,7 @@ export default function Community(){
         ))}
       </div>
 
-      <div className="mt-8 bg-bg1 border border-[rgba(46,46,44,1)] rounded-xl p-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-8 bg-bg1 border border-ink3 rounded-xl p-6 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h3 className="font-outfit font-bold text-lg">Let's connect.</h3>
           <p className="text-ink1">Find us on any of these platforms.</p>

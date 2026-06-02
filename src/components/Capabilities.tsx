@@ -16,11 +16,11 @@ export default function Capabilities() {
         <p className="text-ink1 max-w-[520px] text-sm anim text-left sm:text-right">Four distinct disciplines. One unified vision of technology that actually moves the needle.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-[rgba(46,46,44,1)] rounded-xl overflow-hidden mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-bg3 rounded-xl overflow-hidden mt-8">
         {items.map((it) => (
           <div key={it.num} className="bg-bg1 p-6">
             <div className="text-[2.5rem] font-outfit font-extrabold text-ink3 mb-3">{it.num}</div>
-            <div className="w-10 h-10 rounded-md bg-[rgba(27,206,146,0.08)] border border-[rgba(14,122,87,1)] flex items-center justify-center mb-3">
+            <div className="w-10 h-10 rounded-md bg-g/10 border border-g-dim flex items-center justify-center mb-3">
               <svg className="w-4 h-4 stroke-g" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="2.5" /></svg>
             </div>
             <div className="font-outfit font-semibold">{it.name}</div>

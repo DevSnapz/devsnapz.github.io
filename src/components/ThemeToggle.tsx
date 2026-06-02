@@ -46,7 +46,7 @@ export default function ThemeToggle(){
     <button
       aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
       onClick={() => setTheme((t) => t === 'light' ? 'dark' : 'light')}
-      className="inline-flex items-center justify-center rounded-md p-1.5 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.03)] text-ink1 hover:text-ink0"
+      className="inline-flex items-center justify-center rounded-md p-1.5 bg-bg2 border border-ink3 text-ink1 hover:text-ink0"
     >
       {theme === 'light'
         ? <SunIcon className="h-5 w-5" />

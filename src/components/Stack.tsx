@@ -20,11 +20,11 @@ export default function Stack() {
 
         <div className="md:col-span-2 flex flex-col gap-3">
           {rows.map(r => (
-            <div key={r.cat} className="bg-bg1 border border-[rgba(46,46,44,1)] rounded-md p-4 flex items-center gap-4">
+            <div key={r.cat} className="bg-bg1 border border-ink3 rounded-md p-4 flex items-center gap-4">
               <div className="font-dmmono text-xs uppercase text-ink2 min-w-[80px]">{r.cat}</div>
               <div className="flex flex-wrap gap-2">
                 {r.tags.map(t => (
-                  <div key={t} className={`text-xs font-dmmono ${['React','Node.js','TypeScript','MongoDB','Docker','Tailwind'].includes(t) ? 'bg-[rgba(27,206,146,0.07)] text-g-text border border-[rgba(27,206,146,0.2)] rounded-sm px-2 py-1' : 'bg-bg2 text-ink1 border border-[rgba(46,46,44,1)] rounded-sm px-2 py-1'}`}>{t}</div>
+                  <div key={t} className={`text-xs font-dmmono ${['React','Node.js','TypeScript','MongoDB','Docker','Tailwind'].includes(t) ? 'bg-g/10 text-g-text border border-g-dim rounded-sm px-2 py-1' : 'bg-bg2 text-ink1 border border-ink3 rounded-sm px-2 py-1'}`}>{t}</div>
                 ))}
               </div>
             </div>
