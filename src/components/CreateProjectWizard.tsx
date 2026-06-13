@@ -160,7 +160,7 @@ export default function CreateProjectWizard({ onClose, onSubmit }: CreateProject
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-black/70 backdrop-blur-md transition-all duration-300">
-      <div className="relative w-full max-w-2xl bg-bg1 border border-ink3 rounded-2xl shadow-2xl overflow-hidden flex flex-col my-8 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-2xl bg-bg1 border border-ink3 rounded-2xl shadow-2xl overflow-hidden flex flex-col my-8">
         
         {/* Header */}
         <div className="bg-bg0 px-6 py-4 border-b border-ink3 flex justify-between items-center">

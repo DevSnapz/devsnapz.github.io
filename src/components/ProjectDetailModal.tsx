@@ -134,7 +134,7 @@ export default function ProjectDetailModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto bg-black/70 backdrop-blur-md transition-all duration-300">
-      <div className="relative w-full max-w-4xl bg-bg1 border border-ink3 rounded-2xl shadow-2xl overflow-hidden flex flex-col my-8 animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-4xl bg-bg1 border border-ink3 rounded-2xl shadow-2xl overflow-hidden flex flex-col my-8">
         
         {/* Banner with Close Button */}
         <div className={`h-40 bg-gradient-to-r ${project.bannerGradient} relative flex items-end p-6`}>

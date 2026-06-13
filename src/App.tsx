@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import useAnimateOnScroll from './hooks/useAnimateOnScroll';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Capabilities from './components/Capabilities';
@@ -35,10 +34,9 @@ const initialAppsSeed: CollaboratorApplication[] = [
 ];
 
 export default function App() {
-  useAnimateOnScroll();
-
   // Route/View State
   const [currentView, setCurrentView] = useState<'landing' | 'explore' | 'dashboard'>('landing');
+
   const [showCreateWizard, setShowCreateWizard] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -388,7 +386,7 @@ export default function App() {
             <Stack />
             <Ecosystem />
             
-            <section className="manifesto anim">
+            <section className="manifesto">
               <div className="max-w-[1100px] mx-auto px-4 sm:px-8 py-16 text-center border-t border-ink3">
                 <h2 className="manifesto-hl mx-auto">
                   "Every idea is a node. <span className="text-g">DevSnapz</span> connects them into something <em className="text-gold">real</em>."

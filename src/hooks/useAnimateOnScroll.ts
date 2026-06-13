@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export default function useAnimateOnScroll() {
+export default function useAnimateOnScroll(trigger?: any) {
   useEffect(() => {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
@@ -13,10 +13,15 @@ export default function useAnimateOnScroll() {
           io.unobserve(el)
         }
       })
-    }, { threshold: 0.1 })
+    }, { threshold: 0.05 })
 
-    document.querySelectorAll('.anim').forEach((el) => io.observe(el))
+    const timeout = setTimeout(() => {
+      document.querySelectorAll('.anim').forEach((el) => io.observe(el))
+    }, 80)
 
-    return () => io.disconnect()
-  }, [])
+    return () => {
+      clearTimeout(timeout)
+      io.disconnect()
+    }
+  }, [trigger])
 }
